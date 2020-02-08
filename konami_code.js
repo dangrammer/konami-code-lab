@@ -9,8 +9,23 @@ const codes = [
   "ArrowRight",
   "b",
   "a"
-];
+]
+
+let i = 0
 
 function init() {
-  // your code here
+  document.body.addEventListener("keydown", (event) => KeyDownHandler(event))
 }
+
+function KeyDownHandler(event) {
+  if (event.key === codes[i]) {
+    i++
+    if (i === codes.length) {
+      alert("Hurray!")
+      i = 0
+    }
+  } else {
+    i = 0
+  }
+}
+
